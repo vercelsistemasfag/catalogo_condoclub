@@ -289,7 +289,6 @@ setupNotifications();
   if (!track) return;
   const cards = [...track.querySelectorAll(".app-feature")];
   const dots = [...document.querySelectorAll("[data-app-slide]")];
-  const pause = document.querySelector(".apps-carousel-pause");
   const mobile = matchMedia("(max-width:720px)");
   const reduced = matchMedia("(prefers-reduced-motion:reduce)");
   let current = 0, timer, paused = false, visible = false;
@@ -311,7 +310,7 @@ setupNotifications();
     });
   }
   function userPause() {
-    paused = true; stop(); pause.textContent = "Retomar animação"; pause.setAttribute("aria-pressed","true");
+    paused = true; stop();
   }
   track.addEventListener("scroll", update, {passive:true});
   track.addEventListener("pointerdown",userPause,{passive:true});
@@ -321,10 +320,6 @@ setupNotifications();
     event.preventDefault(); userPause(); go((current+(event.key==="ArrowRight"?1:-1)+cards.length)%cards.length);
   });
   dots.forEach((dot,i) => dot.addEventListener("click",()=>{userPause();go(i);}));
-  pause.addEventListener("click",()=>{
-    paused = !paused; pause.textContent=paused?"Retomar animação":"Pausar animação";
-    pause.setAttribute("aria-pressed",String(paused)); start();
-  });
   new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;start();},{threshold:.35}).observe(track);
   document.addEventListener("visibilitychange",start);
   mobile.addEventListener("change",start); reduced.addEventListener("change",start);
