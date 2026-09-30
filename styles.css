@@ -138,3 +138,13 @@
     align-items:center;
   }
 }
+
+.mobile-break{display:none}
+@media(max-width:720px){
+  .hero-stage .hero p{
+    font-size:.9375rem;
+    line-height:1.45;
+    white-space:nowrap;
+  }
+  .mobile-break{display:block}
+}
