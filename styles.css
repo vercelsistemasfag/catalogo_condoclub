@@ -118,3 +118,23 @@
     margin-top:0;
   }
 }
+
+/* Maior contraste somente na área superior da foto */
+@media(max-width:720px){
+  .hero-stage{
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(8,25,43,.78) 0%,
+        rgba(8,25,43,.68) 32%,
+        rgba(8,25,43,.18) 58%,
+        rgba(8,25,43,.05) 100%
+      ),
+      url('/condoclub-familia.png');
+  }
+
+  .footer-developer a{
+    display:inline-flex;
+    align-items:center;
+  }
+}
