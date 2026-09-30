@@ -103,3 +103,18 @@
     max-width:112px;
   }
 }
+
+/* Ajuste final do hero CondoClub */
+@media(max-width:720px){
+  .hero-stage .hero h1 em{
+    color:var(--gold);
+  }
+
+  .hero-stage .hero h1{
+    margin-bottom:6px;
+  }
+
+  .hero-stage .hero p{
+    margin-top:0;
+  }
+}
