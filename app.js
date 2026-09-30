@@ -182,6 +182,7 @@ async function setupNotifications() {
   button.type = "button";
   button.className = "notification-app";
   button.innerHTML = '<span aria-hidden="true">●</span> <span class="notification-label">Ativar notificações</span>';
+  button.hidden = Notification.permission === "granted";
   document.body.append(button);
 
   const setNotificationLabel = (label) => {
@@ -245,6 +246,7 @@ async function setupNotifications() {
     try {
       const permission = Notification.permission === "granted" ? "granted" : await Notification.requestPermission();
       if (permission === "granted") {
+        button.hidden = true;
         await registerFcm();
         setNotificationLabel("Notificações ativadas");
         button.hidden = true;
@@ -280,3 +282,51 @@ async function setupNotifications() {
 }
 
 setupNotifications();
+
+// Carrossel mobile: deslize, indicadores e rotação que pode ser pausada.
+(() => {
+  const track = document.querySelector("#apps-carousel");
+  if (!track) return;
+  const cards = [...track.querySelectorAll(".app-feature")];
+  const dots = [...document.querySelectorAll("[data-app-slide]")];
+  const pause = document.querySelector(".apps-carousel-pause");
+  const mobile = matchMedia("(max-width:720px)");
+  const reduced = matchMedia("(prefers-reduced-motion:reduce)");
+  let current = 0, timer, paused = false, visible = false;
+  const left = i => cards[i].offsetLeft - cards[0].offsetLeft;
+  const stop = () => clearInterval(timer);
+  const start = () => {
+    stop();
+    if (!mobile.matches || reduced.matches || paused || !visible || document.hidden) return;
+    timer = setInterval(() => go((current + 1) % cards.length), 5000);
+  };
+  function go(i) {
+    track.scrollTo({left:left(i), behavior:reduced.matches ? "instant" : "smooth"});
+  }
+  function update() {
+    current = cards.reduce((best, card, i) => Math.abs(left(i)-track.scrollLeft) < Math.abs(left(best)-track.scrollLeft) ? i : best, 0);
+    dots.forEach((dot,i) => {
+      dot.classList.toggle("active",i===current);
+      if(i===current) dot.setAttribute("aria-current","true"); else dot.removeAttribute("aria-current");
+    });
+  }
+  function userPause() {
+    paused = true; stop(); pause.textContent = "Retomar animação"; pause.setAttribute("aria-pressed","true");
+  }
+  track.addEventListener("scroll", update, {passive:true});
+  track.addEventListener("pointerdown",userPause,{passive:true});
+  track.addEventListener("focusin",userPause);
+  track.addEventListener("keydown",event => {
+    if(event.key!=="ArrowLeft" && event.key!=="ArrowRight") return;
+    event.preventDefault(); userPause(); go((current+(event.key==="ArrowRight"?1:-1)+cards.length)%cards.length);
+  });
+  dots.forEach((dot,i) => dot.addEventListener("click",()=>{userPause();go(i);}));
+  pause.addEventListener("click",()=>{
+    paused = !paused; pause.textContent=paused?"Retomar animação":"Pausar animação";
+    pause.setAttribute("aria-pressed",String(paused)); start();
+  });
+  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;start();},{threshold:.35}).observe(track);
+  document.addEventListener("visibilitychange",start);
+  mobile.addEventListener("change",start); reduced.addEventListener("change",start);
+  update();
+})();

@@ -40,3 +40,28 @@
   .hero-stage .institutional-video video{border-radius:16px;border:1px solid rgba(255,255,255,.4);box-shadow:0 14px 32px rgba(0,0,0,.25)}
   .hero-stage .institutional-video p{color:#fff}
 }
+
+/* Ocultar o botão tem precedência sobre o display:flex original. */
+.notification-app[hidden]{display:none!important}
+.apps-carousel-controls{display:none}
+@media(max-width:720px){
+  .hero-stage{padding-bottom:0;background-image:linear-gradient(180deg,rgba(8,25,43,.48) 0%,rgba(8,25,43,.56) 40%,rgba(8,25,43,.05) 75%,rgba(8,25,43,.08) 100%),url('/condoclub-familia.png');background-position:center center}
+  .hero-stage .hero{min-height:860px;min-height:max(780px,110svh);padding:132px 24px 340px;align-items:start}
+  .hero-stage+.institutional-video{margin-top:24px;margin-bottom:12px}
+  .condoclub-apps{display:block;margin:0 0 48px;padding:32px 0 28px;border:0;border-radius:0;background:#f1efeb;box-shadow:none;overflow:hidden}
+  .condoclub-apps:after{display:none}
+  .apps-intro{padding:0 24px 30px}
+  .apps-showcase{display:flex;gap:16px;overflow-x:auto;padding:0 24px 22px;scroll-snap-type:x mandatory;scroll-padding-inline:24px;scrollbar-width:none;overscroll-behavior-x:contain}
+  .apps-showcase::-webkit-scrollbar{display:none}
+  .apps-showcase .app-feature{flex:0 0 85%;min-height:410px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:28px;padding:32px 26px;border:0;border-radius:26px;background:#fff;scroll-snap-align:start;box-shadow:0 10px 24px rgba(17,43,73,.04)}
+  .apps-showcase .app-feature-icon{width:52px;height:52px;border:0;box-shadow:none;background:var(--gold-soft);border-radius:15px}
+  .apps-showcase .app-feature-icon svg{width:29px;height:29px}
+  .apps-showcase .app-feature h3{font-size:1.35rem;line-height:1.2;margin-bottom:16px}
+  .apps-showcase .app-feature p{font-size:1.12rem;line-height:1.6;margin:0}
+  .apps-carousel-controls{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:10px}
+  .apps-carousel-dots{display:flex;gap:8px;align-items:center}
+  .apps-carousel-dots button{width:36px;height:36px;padding:0;border:0;background:transparent;cursor:pointer;display:grid;place-items:center}
+  .apps-carousel-dots button:after{content:"";width:9px;height:9px;border-radius:99px;background:var(--navy);transition:width .25s,background .25s}
+  .apps-carousel-dots button.active:after{width:32px;background:var(--gold)}
+  .apps-carousel-pause{padding:6px 12px;border:0;background:transparent;color:var(--muted);font-size:.75rem;cursor:pointer}
+}

@@ -37,6 +37,8 @@
         </div>
       </section>
 
+      </div>
+
       <section class="institutional-video" aria-label="Vídeo institucional CondoClub">
         <video controls playsinline preload="metadata">
           <source src="/video-institucional.mp4" type="video/mp4" />
@@ -45,11 +47,6 @@
         <p>Veja o vídeo e entenda como funciona</p>
       </section>
 
-      </div>
-
-      <div class="catalog-banner">
-        <h2 class="catalog-banner-title"><span>Catálogo</span> <span>de</span> <span>Parceiros</span></h2>
-      </div>
 
       <section class="catalog" aria-labelledby="catalog-title">
         <div class="catalog-heading">
@@ -60,13 +57,6 @@
         <div id="partner-list" class="partner-list" aria-live="polite"></div>
       </section>
 
-      <section class="club-cta">
-        <div><span class="section-kicker light">Rede em crescimento</span><h2>A Rede CondoClub está crescendo.</h2><p>Em breve, novos parceiros serão adicionados ao catálogo.</p></div>
-        <div class="club-cta-actions">
-          <a href="https://wa.me/5551992842933?text=Ol%C3%A1%21%20Quero%20levar%20o%20CondoClub%20para%20o%20meu%20condom%C3%ADnio." target="_blank" rel="noreferrer">Quero indicar meu condomínio <span aria-hidden="true">↗</span></a>
-          <a href="https://wa.me/5551992842933?text=Ol%C3%A1%21%20Quero%20ser%20parceiro%20do%20CondoClub%20e%20oferecer%20meu%20produto%20ou%20servi%C3%A7o." target="_blank" rel="noreferrer">Quero ser parceiro e oferecer meu produto ou serviço <span aria-hidden="true">↗</span></a>
-        </div>
-      </section>
 
       <section class="condoclub-apps" aria-labelledby="condoclub-apps-title">
         <div class="apps-intro">
@@ -75,7 +65,7 @@
           <strong><span aria-hidden="true">✓</span> Gratuitos para o condomínio</strong>
         </div>
 
-        <div class="apps-showcase">
+        <div class="apps-showcase" id="apps-carousel" tabindex="0" aria-label="Aplicativos gratuitos: deslize para conhecer os três">
           <article class="app-feature">
             <div class="app-feature-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path d="m9 15 2 2 4-4"/></svg>
@@ -96,6 +86,22 @@
             </div>
             <div><h3>Aplicativo CondoWiew</h3><p>Vídeo porteiro para o morador ver quem está tocando o interfone no portão.</p></div>
           </article>
+        </div>
+        <div class="apps-carousel-controls" aria-label="Controles dos aplicativos">
+          <div class="apps-carousel-dots">
+            <button type="button" class="active" aria-label="Mostrar CondoAgenda" aria-current="true" data-app-slide="0"></button>
+            <button type="button" aria-label="Mostrar CondoBox" data-app-slide="1"></button>
+            <button type="button" aria-label="Mostrar CondoWiew" data-app-slide="2"></button>
+          </div>
+          <button type="button" class="apps-carousel-pause" aria-pressed="false">Pausar animação</button>
+        </div>
+      </section>
+
+      <section class="club-cta">
+        <div><span class="section-kicker light">Rede em crescimento</span><h2>A Rede CondoClub está crescendo.</h2><p>Em breve, novos parceiros serão adicionados ao catálogo.</p></div>
+        <div class="club-cta-actions">
+          <a href="https://wa.me/5551992842933?text=Ol%C3%A1%21%20Quero%20levar%20o%20CondoClub%20para%20o%20meu%20condom%C3%ADnio." target="_blank" rel="noreferrer">Quero indicar meu condomínio <span aria-hidden="true">↗</span></a>
+          <a href="https://wa.me/5551992842933?text=Ol%C3%A1%21%20Quero%20ser%20parceiro%20do%20CondoClub%20e%20oferecer%20meu%20produto%20ou%20servi%C3%A7o." target="_blank" rel="noreferrer">Quero ser parceiro e oferecer meu produto ou serviço <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
