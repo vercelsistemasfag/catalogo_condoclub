@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#112b49" />
+    <meta name="description" content="Benefícios e condições especiais dos parceiros CondoClub." />
+    <title>Catálogo Rede Condo Club</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      window.__condoClubInstallPrompt = null;
+      window.addEventListener("beforeinstallprompt", function (event) {
+        event.preventDefault();
+        window.__condoClubInstallPrompt = event;
+        window.dispatchEvent(new Event("condoclub-install-ready"));
+      });
+    </script>
+  </head>
+  <body>
+    <main id="topo">
+      <header class="app-header">
+        <div class="header-inner">
+          <a class="brand" href="#topo" aria-label="CondoClub — início"><img src="/condoclub-logo.webp" alt="CondoClub" /></a>
+          <a class="header-contact" href="https://wa.me/5551992842933" target="_blank" rel="noreferrer">Falar com o CondoClub <span aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow"><i></i> Catálogo de Parceiros</span>
+          <h1>Vantagens para aproveitar <em>onde você mora.</em></h1>
+          <p>Encontre empresas parceiras, descubra seus benefícios exclusivos e fale direto com quem resolve.</p>
+        </div>
+      </section>
+
+      <section class="institutional-video" aria-label="Vídeo institucional CondoClub">
+        <video controls playsinline preload="metadata">
+          <source src="/video-institucional.mp4" type="video/mp4" />
+          Seu navegador não suporta a reprodução de vídeos.
+        </video>
+        <p>Veja o vídeo e entenda como funciona</p>
+      </section>
+
+      <section class="catalog" aria-labelledby="catalog-title">
+        <div class="catalog-heading">
+          <div><h2 id="catalog-title">Benefícios perto de você</h2></div>
+          <label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only">Buscar parceiro ou serviço</span><input id="search" type="search" placeholder="Buscar parceiro ou serviço" /></label>
+        </div>
+        <div id="filters" class="filters" aria-label="Filtrar por categoria"></div>
+        <div id="partner-list" class="partner-list" aria-live="polite"></div>
+      </section>
+
+      <section class="club-cta">
+        <div><span class="section-kicker light">Rede em crescimento</span><h2>A Rede CondoClub está crescendo.</h2><p>Em breve, novos parceiros serão adicionados ao catálogo.</p></div>
+        <div class="club-cta-actions">
+          <a href="https://wa.me/5551992842933?text=Ol%C3%A1%21%20Quero%20levar%20o%20CondoClub%20para%20o%20meu%20condom%C3%ADnio." target="_blank" rel="noreferrer">Quero indicar meu condomínio <span aria-hidden="true">↗</span></a>
+          <a href="https://wa.me/5551992842933?text=Ol%C3%A1%21%20Quero%20ser%20parceiro%20do%20CondoClub%20e%20oferecer%20meu%20produto%20ou%20servi%C3%A7o." target="_blank" rel="noreferrer">Quero ser parceiro e oferecer meu produto ou serviço <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="condoclub-apps" aria-labelledby="condoclub-apps-title">
+        <div class="apps-intro">
+          <h2 id="condoclub-apps-title">E as vantagens para o seu condomínio não param por aqui.</h2>
+          <p>A Rede CondoClub também oferece aplicativos gratuitos para facilitar a rotina dos moradores e organizar a operação do condomínio.</p>
+          <strong><span aria-hidden="true">✓</span> Gratuitos para o condomínio</strong>
+        </div>
+
+        <div class="apps-showcase">
+          <article class="app-feature">
+            <div class="app-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path d="m9 15 2 2 4-4"/></svg>
+            </div>
+            <div><h3>Aplicativo CondoAgenda</h3><p>Reservas do salão de festas e de outras áreas do condomínio.</p></div>
+          </article>
+
+          <article class="app-feature">
+            <div class="app-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m4 7 8-4 8 4-8 4-8-4Z"/><path d="M4 7v10l8 4 8-4V7M12 11v10"/></svg>
+            </div>
+            <div><h3>Aplicativo CondoBox</h3><p>Controle simples e organizado do recebimento de encomendas.</p></div>
+          </article>
+
+          <article class="app-feature">
+            <div class="app-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6Z"/><circle cx="12" cy="12" r="2.5"/><path d="M18.5 5.5 20 4m-14.5 1.5L4 4"/></svg>
+            </div>
+            <div><h3>Aplicativo CondoWiew</h3><p>Vídeo porteiro para o morador ver quem está tocando o interfone no portão.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <img src="/condoclub-logo.webp" alt="CondoClub" />
+        <div class="footer-credits"><p>© 2026 CondoClub. Todos os direitos reservados.</p><p>CondoClub é um produto da Vercel Tecnologia da Informação LTDA – Novo Hamburgo/RS.</p></div>
+      </footer>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
